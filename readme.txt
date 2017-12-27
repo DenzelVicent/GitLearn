@@ -29,3 +29,7 @@ git remote add origin git@github.com:DenzelVicent/GitLearn.git 		本地仓库和
 git push -u origin master 		把本地仓库的文件推送到远程仓库上（master是分支的名字）
 git clone git@github.com:DenzelVicent/GitLearn.git 		从远程仓库上下载项目
 ----------------------------------------------------------
+分支管理
+git branch 分支名		创新的分支
+git checkout 分支名 		切换到新的分支
+git checkout -b 分支名 		创建并切换到新的分支
