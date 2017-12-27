@@ -23,3 +23,9 @@ git reset HEAD 文件名		用于当修改已经添加到暂存区里的情况（
 git rm 文件名		用于删除版本库里的文件
 git checkout 文件名		用于误删工作区的文件后用版本库的checkout恢复文件
 ----------------------------------------------------------
+远程仓库
+ssh-keygen -t rsa -C "denzel_dc@163.com"		创建SSH公钥，添加到GitHub
+git remote add origin git@github.com:DenzelVicent/GitLearn.git 		本地仓库和远程仓库绑定（origin是远程仓库的名字）
+git push -u origin master 		把本地仓库的文件推送到远程仓库上（master是分支的名字）
+git clone git@github.com:DenzelVicent/GitLearn.git 		从远程仓库上下载项目
+----------------------------------------------------------
