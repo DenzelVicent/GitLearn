@@ -36,3 +36,4 @@ git checkout 分支名 		切换到新的分支
 git checkout -b 分支名 		创建并切换到新的分支
 git merge 分支名 			合并某分支到当前分支
 git branch -d 分支名 		删除分支
+Creating a new branch is quick & simple.
