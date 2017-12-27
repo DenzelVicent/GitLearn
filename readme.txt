@@ -37,4 +37,10 @@ git checkout -b 分支名 		创建并切换到新的分支
 git merge 分支名 			合并某分支到当前分支
 git branch -d 分支名 		删除分支
 冲突合并
-Creating a new branch is quick & simple.
+【<<<<<<< HEAD
+【Creating a new branch is quick & simple.
+【=======
+【Creating a new branch is quick AND simple.
+【>>>>>>> feature1
+Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，我们修改后重新提交即可
+git log --graph				命令可以看到分支合并图
