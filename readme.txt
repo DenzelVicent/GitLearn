@@ -9,3 +9,6 @@ git commit -m "代码功能简介"		提交代码
 “我添加了版本一”
 利用git log 命令可以查看历史版本操作记录，也可以用git log --pretty=oneline，显示更简单
 “我添加了版本二”
+git reset --hard HEAD^		回退至上一个版本（多个版本用HEAD~数字）
+git reflog		查看版本更新记录（可以根据commitID跳转至所需版本：git reset --hard 3628164）
+----------------------------------------------------------
