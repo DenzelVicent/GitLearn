@@ -17,3 +17,6 @@ git add命令是把文件的更改提交到暂存区里，git commit命令是把
 管理修改
 每次修改都需要add一次，然后再commit
 撤销修改测试
+git checkout 文件名		用于当修改没有添加到暂存区里的情况（没有add）
+git reset HEAD 文件名		用于当修改已经添加到暂存区里的情况（add之后没有commit）
+删除文件
