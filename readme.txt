@@ -81,3 +81,5 @@ git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
 命令git push origin --tags可以推送全部未推送过的本地标签；
 命令git tag -d <tagname>可以删除一个本地标签；
 命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
+----------------------------------------------------------
+学习完成
