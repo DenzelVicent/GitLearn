@@ -43,4 +43,32 @@ git branch -d 分支名 		删除分支
 【Creating a new branch is quick AND simple.
 【>>>>>>> feature1
 Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，我们修改后重新提交即可
-git log --graph				命令可以看到分支合并图
+git log --graph				可以看到分支合并图
+分支合并策略
+git merge --no-ff dev 								合并分支时尽量不必使用fastforward模式，因为会删除历史分支信息
+git merge --no-ff -m "merge with no-ff" dev 		因为合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。更快速。
+BUG分支
+当临时有BUG修复任务时，需要把当前任务现场保存起来（不提交），新建BUG分支
+git stash 							保存当前工作现场
+git checkout -b BUG1 				创建bug分支
+修复完成后，返回工作现场
+git stash list 						查看所有保存的工作场景
+git stash apply stash@{0}			恢复stash但不删除（如果只有一个stash，可以不带stash代号）
+git stash drop stash@{0}			删除stash
+git stash pop stash@{0}				恢复的同时删除stash内容 
+git branch -D feature-vulcan 		强制删除未合并的分支
+----------------------------------------------------------
+多人协作
+因此，多人协作的工作模式通常是这样：
+首先，可以试图用git push origin branch-name推送自己的修改；
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+如果合并有冲突，则解决冲突，并在本地提交；
+没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
+如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，
+用命令git branch --set-upstream branch-name origin/branch-name。
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+#查看远程库信息，使用git remote -v；
+#本地新建的分支如果不推送到远程，对其他人就是不可见的；
+#从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+#在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+----------------------------------------------------------
